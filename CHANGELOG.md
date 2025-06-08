@@ -9,3 +9,4 @@
 ## [v1.2] - 2025-06-07
 - Initial public specification release
 - Basic facial parameter codes defined
+- 
