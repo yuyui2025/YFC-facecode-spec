@@ -76,3 +76,4 @@ E7.2M3.4R1.2N2.1 - P8.3H2.0 - R1.2C3.5S2.7
 📕 [日本語仕様書 v1.3](./docs/YFC_specification_v1.3_JP.md)  
 📂 [Structure & Modifiers](./docs/yfc_structure.md)
 
+<!-- PR log for YFC v1.3 -->
