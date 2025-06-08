@@ -65,6 +65,7 @@ E7.2M3.4R1.2N2.1 - P8.3H2.0 - R1.2C3.5S2.7
 
 See `YFC_specification_v1.2.md` for full details.
 
+この仕様と実験記録は yfc_structure.md に記載
 ---
 
 © 2025 Yui & Yuu｜Free for non-commercial use.
