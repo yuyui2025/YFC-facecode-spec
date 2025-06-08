@@ -1,7 +1,5 @@
 # YFC - Yui Facial Code
 
-# YFC - Yui Facial Code
-
 **YFC (Yui Facial Code)** is a parametric notation system for describing facial features in AI-generated characters.
 
 It encodes eyes, mouth, nose, face shape, and emotional tone using numerical parameters in a unified format that enhances **consistency and reusability** across platforms.
