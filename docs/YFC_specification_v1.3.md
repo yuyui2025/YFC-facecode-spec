@@ -150,9 +150,6 @@ E7.2M3.4R1.2N2.1 - P8.3H2.0 - R1.2C3.5S2.7
 - Visual storytelling (ZINE, social media)
 - Future integration with UI tools and translators
 
-## 📄 Full Specification
-
-See: [`YFC_specification_v1.2.md`](https://www.notion.so/YFC_specification_v1.2.md)
 
 ## 📜 License
 
