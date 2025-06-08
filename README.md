@@ -28,6 +28,17 @@ YFC-7A3R1N2
 ※主にベース顔の構成（E/M/R/N）に限定。アルファベットはMの数値換算。
 
 ---
+### 開発環境・構成（2025年6月現在）
+
+- 使用言語：Markdown / JSON  
+- 編集環境：ChatGPT Canvas / Notion（内容設計・構文管理）  
+- 変換検証：GPT-4o / Gemini 2.5 Flash にて構文印象テスト実施  
+- バージョン管理：GitHub Pages にて公開、v1.2反映済み  
+- 今後の構想：  
+  - 修飾構文 ↔ 自然文の相互変換辞書  
+  - 感情印象バイアスAPI  
+  - YFC構文対応WebUI / Playgroundツール  
+
 
 # 📘 English Summary
 
