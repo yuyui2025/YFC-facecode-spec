@@ -2,7 +2,7 @@
 
 ## [v1.35] - 2025-06-10
 ### Changed
-- `YFC_specification_v1.35.md`: Modifier構文と物理構文（E/M/N...）を完全統合
+- `YFC_specification_v1.3.5.md`: Modifier構文と物理構文（E/M/N...）を完全統合
 - 仕様構成の階層整理と例示の改善
 - YIT連携の記述を明示
 
