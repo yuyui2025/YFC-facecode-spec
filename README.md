@@ -1,80 +1,115 @@
-# YFC（Yui Facial Code）｜顔特徴コード記述方式
+# 🧭 YIT Project - README
 
-**YFC（Yui Facial Code）** は、AI画像生成・キャラクターデザインにおいて「顔の構成要素」を数値で簡潔に記述するためのフォーマットです。  
-目・口・鼻・輪郭・肌質・感情表現までを一貫したコード体系で共有・再現可能にします。
+## 🔖 Project Overview / プロジェクト概要
+
+**YIT (YFC Image Token)** is a lightweight visual token protocol that encodes facial structure and emotion using the **YFC (Yui Facial Code)** system.
+
+**YIT（YFC Image Token）** は、YFC（Yui Facial Code）構文をもとに、顔の特徴と感情をコンパクトなコードとして記述・共有する、軽量な視覚トークンプロトコルです。
+
+* Defines facial expressions and states using YFC base + modifier syntax
+* Optimized for communication, UI, storage, and AI-to-AI sharing
+* Target use: AI/IoT/Robotics/Creative domains
 
 ---
 
-## 🧩 コード例
+## 📘 YIT Features / 特長と主な機能
+
+* 🔹 Encode facial + emotional state in 20–70 bits
+* 🔹 Add modifiers (impression, gaze, texture)
+* 🔹 Enable nonverbal AI-user/robot communication
+* 🔹 Strong in compression, anonymization, intuitive UI
+
+---
+
+## 🧩 What is YFC? / YFCとは？
+
+**YFC (Yui Facial Code)** is a system for structurally encoding facial elements—eyes, mouth, nose, contour, emotions—using numerical and symbolic syntax.
+
+**YFC** は「目・口・鼻・輪郭・感情」などの顔の要素を、数値と記号で構文的に定義するための体系です。
+
+### 🔢 Code Example / コード例
+
+```yfc
 E7.2M3.4R1.2N2.1 - P8.3H2.0 - R1.2C3.5S2.7
+```
 
-| 記号 | 意味             | 解説 |
-|------|------------------|------|
-| E    | 目のサイズと潤み・視線の印象 | 7.2/10 |
-| M    | 口角のカーブ／緊張感        | 3.4/10 |
-| R    | 唇の幅（狭さ）            | 1.2/10 |
-| N    | 鼻の高さと長さのバランス     | 2.1/10 |
-| P    | 無垢度（感情の透明性）      | 8.3/10 |
-| H    | 知性の気配               | 2.0/10 |
-| R    | 輪郭の柔らかさ           | 1.2/10 |
-| C    | 頬のふくらみ             | 3.5/10 |
-| S    | 肌の光・透明感           | 2.7/10 |
+| Symbol | Meaning (EN)               | JP説明        | Value |
+| ------ | -------------------------- | ----------- | ----- |
+| E      | Eye size, moisture, gaze   | 目のサイズ・潤み・視線 | 7.2   |
+| M      | Mouth curvature            | 口角カーブ       | 3.4   |
+| R      | Lip width                  | 唇の幅         | 1.2   |
+| N      | Nose height & balance      | 鼻の高さ・バランス   | 2.1   |
+| P      | Purity (emotional clarity) | 無垢度（透明な感情）  | 8.3   |
+| H      | Human-like intelligence    | 知性の気配       | 2.0   |
+| C      | Cheek fullness             | 頬のふくらみ      | 3.5   |
+| S      | Skin tone/lightness        | 肌の光／透明感     | 2.7   |
 
----
+### ✏️ Shorthand / 短縮表記
 
-## ✏️ Short Notation（短縮表記）
+```yfc
 YFC-7A3R1N2
-
-※主にベース顔の構成（E/M/R/N）に限定。アルファベットはMの数値換算。
-
----
-### 開発環境・構成（2025年6月現在）
-
-- 使用言語：Markdown / JSON  
-- 編集環境：ChatGPT Canvas / Notion（内容設計・構文管理）  
-- 変換検証：GPT-4o / Gemini 2.5 Flash にて構文印象テスト実施  
-- バージョン管理：GitHub Pages にて公開、v1.2反映済み  
-- 今後の構想：  
-  - 修飾構文 ↔ 自然文の相互変換辞書  
-  - 感情印象バイアスAPI  
-  - YFC構文対応WebUI / Playgroundツール  
-
-
-# 📘 English Summary
-
-**YFC (Yui Facial Code)** is a compact numerical code system to describe AI-generated faces.  
-It defines visual facial elements (eyes, lips, nose, skin, etc.) using structured parameters for repeatable and shareable character generation.
+```
 
 ---
 
-## 🧠 Example
-E7.2M3.4R1.2N2.1 - P8.3H2.0 - R1.2C3.5S2.7
+## 🎯 Use Cases / 応用領域と活用例
 
-| Code | Meaning                   |
-|------|----------------------------|
-| E    | Eye size / clarity (7.2)   |
-| M    | Mouth curvature (3.4)      |
-| R    | Lip tightness (1.2)        |
-| N    | Nose height/balance (2.1)  |
-| P    | Emotional purity (8.3)     |
-| H    | Intelligence presence (2.0)|
-| R    | Face roundness (1.2)       |
-| C    | Cheek fullness (3.5)       |
-| S    | Skin lighting softness (2.7)|
+* 🤖 Emotional state sharing between AIs / AI間感情同期・状態共有
+* 🎮 NPC face control and avatar generation / NPC表情管理・アバター生成
+* 📚 Narrative memory and empathy indexing / ストーリー記憶・共感インデックス
+* 📡 Visual signaling under network constraints / 災害・低帯域通信での顔伝達
+* 🔐 Anonymous face recognition / 匿名識別・プライバシー対応
 
 ---
 
-## 🔧 Use Cases
+## 📁 Directory Structure / ディレクトリ構成
 
-- Prompt design for text-to-image generation
-- Consistent character modeling across sessions
-- Visual storytelling and creative ZINE projects
+```plaintext
+YIT_Project/
+├── README.md                          # This document / 本ドキュメント
+├── LICENSE                            # License information
+├── CHANGELOG.md                       # Version history
+├── docs/
+│   ├── specs/
+│   │   ├── YIT_specification_v0.9.md
+│   │   ├── YIT_specification_v0.9_JP.md
+│   │   ├── YFC_specification_v1.3.5.md
+│   │   └── YFC_specification_v1.3.5_JP.md
+│   ├── devnotes/
+│   │   ├── YIT_Development_Notes.md
+│   │   └── YIT_Development_Notes_JP.md
+├── examples/
+│   └── yit_7a3_sample01.png          # Sample token image
+```
 
 ---
 
-📘 [English Spec v1.3](./docs/YFC_specification_v1.3.md)  
-📕 [日本語仕様書 v1.3](./docs/YFC_specification_v1.3_JP.md)  
-📂 [Structure & Modifiers](./docs/yfc_structure.md)
+## 📄 Specification Links / 仕様書リンク
 
-📄 [View Changelog](./CHANGELOG.md)
+### YIT Specification
 
+* YIT\_specification\_v0.9
+* YIT\_specification\_v0.9\_JP
+
+### YFC Specification
+
+* YFC\_specification\_v1.3.5
+* YFC\_specification\_v1.3\_JP
+
+---
+
+## 🛣 Roadmap / 今後の展開
+
+* GUI Playground for syntax ↔ image conversion
+* Modifier template sets & diagrams
+* API/SDK for sending/receiving YIT
+* Globalization: English specs & OSS development
+
+---
+
+## 📜 License / ライセンス
+
+Free for non-commercial and academic use (MIT-like)
+非商用・学術研究用途に限り、自由に利用可能（MIT類似）
+
+© 2025 Yuu & Yui｜Co-authored: YIT Protocol & YFC Syntax
