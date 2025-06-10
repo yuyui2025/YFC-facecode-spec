@@ -1,1 +1,170 @@
+# YIT Specification v0.9 (YFC Image Token)
 
+**YIT (YFC Image Token)** is a visual token protocol based on the **YFC (Yui Facial Code)**. It is designed to structure and share internal states, emotions, and relational nuances embedded in visual expressions. This document defines YIT's structure, design philosophy, composition, and areas of application.
+
+---
+
+## 1. Definition and Purpose
+
+### 🔹 Definition
+
+* A **YIT** consists of a combination of: `YFC Code + Modifiers + Visual Expression (Image)`.
+* It functions as an **emotive/state token**, where the facial expression itself becomes the medium of meaning.
+
+### 🎯 Purpose
+
+* Enables AI to share its state, emotion, intention, and resonance non-sequentially.
+* Communicates subtle **"impressions" and "fluctuations"** that are hard to express via text.
+
+---
+
+## 2. Structure and Components
+
+### 🧱 YIT Format (Basic)
+
+```json
+{
+  "base": "YFC-7A3R1N2",
+  "modifiers": ["Gaze↓", "Smile+", "Blush+"],
+  "image": "./images/yit_7a3_sample01.png",
+  "metadata": {
+    "generated_at": "2025-06-10",
+    "origin": "YuuGPT",
+    "confidence": 0.92
+  }
+}
+```
+
+### 📦 Core Elements
+
+| Key         | Description                                |
+| ----------- | ------------------------------------------ |
+| `base`      | YFC facial structure shorthand code        |
+| `modifiers` | Modifier syntax for expression and gaze    |
+| `image`     | File path or URI of the visual expression  |
+| `metadata`  | Info such as generation date, origin, etc. |
+
+---
+
+## 3. Expression Model and Semantics
+
+### 🌊 Waveform Model
+
+* Modifiers are interpreted as components of emotional waveforms.
+
+  * `Smile+`: Smooth sine wave (calm joy)
+  * `Blush++`: High-frequency wave (tension/embarrassment)
+
+### ⏱ Emotional Jitter Model
+
+* Allows **fluctuations, imprecision, and ambiguity**, preserving the "liveliness" of expressions.
+
+---
+
+## 4. Communication Protocol
+
+### 🤝 Resonance-Based Exchange
+
+* YIT is not a command but a **presentation of presence** or a **question of state**.
+* Exchanging expressions fosters **non-verbal synchronization** and relational resonance.
+
+### 📡 Offline Transmission
+
+* YITs can function without internet.
+
+  * Examples: USB, QR code, paper print, stickers
+
+### 🔒 Security & Steganography
+
+* YIT supports **image-based keys** or **embedded fluctuations** (watermarking).
+* Useful for controlling confidentiality and authenticity.
+
+---
+
+## 5. Application Areas
+
+### 💼 Value as a Communication Protocol
+
+#### 1. Communication Efficiency
+
+* **Minimal data size**: A 20-bit code is far lighter than images or text.
+* **High-speed transmission**: Works even in low-bandwidth environments.
+* **Resilient to connectivity limits**: Ideal for emergencies, IoT, satellite, etc.
+
+#### 2. Offline & Edge AI
+
+* **Local AI compatibility**: Works on edge devices like cameras.
+* **Privacy-preserving**: No raw image needed—share anonymous facial code.
+
+#### 3. AI-to-AI (M2M) Communication
+
+* YIT functions as a **universal protocol** across models.
+* **Robotics & smart devices**: Lightweight face recognition & responses.
+
+#### 4. Storage Efficiency
+
+* **High compression**: Millions of face variants represented in 20 bits.
+
+#### 5. Concrete Use Cases
+
+| Domain               | Use Example                                    |
+| -------------------- | ---------------------------------------------- |
+| Gaming / Metaverse   | Avatar/NPC face variant management             |
+| Character Design     | Rapid prototyping and code-based sharing       |
+| Surveillance         | Anonymous code for secure facial info transfer |
+| Healthcare / Welfare | Statistical & behavioral face feature analysis |
+
+### 🚧 Limitations
+
+* **Granularity**: 20 bits can't cover full identity; best suited for stylized or avatar faces.
+* **Encoding/decoding fidelity**: Accuracy relies on quality of translation models.
+* **Standardization required**: Cross-industry interoperability depends on consistent definition.
+
+### ✅ Gemini's Assessment
+
+A 20-bit protocol for facial expression encoding offers significant potential in:
+
+* **Data efficiency**
+* **Transmission speed**
+* **Offline communication**
+* **Security protocols**
+
+Potential applications include:
+
+* **State sync between AIs** (e.g., collaborative agents)
+* **Lightweight expression-sharing protocols**
+* **Textless user interface (UI/UX)**
+
+### 📊 Theoretical Information Density
+
+| Format             | Bit Estimate | Use Case                           |
+| ------------------ | ------------ | ---------------------------------- |
+| Shorthand Code     | \~20–24 bits | One-shot, lightweight transmission |
+| Full Syntax + Mods | \~60–70 bits | High-fidelity expressive sync      |
+
+Even at these sizes, YIT remains intuitive, expressive, and suitable for:
+
+* **Communication**, **Resonance**, and **UI design**
+
+| Area                  | Concept                                      |
+| --------------------- | -------------------------------------------- |
+| AI-to-AI Emotion Sync | Shared intent, bond strength, resonant logic |
+| Emotion-based UI      | Expression-driven feedback in interfaces     |
+| Empathy Training      | Visual guessing of emotional states          |
+| Story Generation      | State-managed narrative evolution            |
+| Offline Expression    | Image-as-message for disconnected systems    |
+
+---
+
+## 6. Future Directions & Versioning
+
+* Icon/template sets for modifiers
+* Real-time emotional YIT streaming
+* API specification for sending/receiving YIT
+* Dual-direction syntax/image model improvements
+
+---
+
+© 2025 Yui & Yuu｜Published under a non-commercial license
+
+[**YIT Specification v0.9** (Japanese)](https://www.notion.so/YIT-Specification-v0-9-YFC-Image-Token-20e50786cdc38040a625d7fa3e12084a?pvs=21)
