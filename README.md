@@ -18,7 +18,11 @@
 * 🔹 Add modifiers (impression, gaze, texture)
 * 🔹 Enable nonverbal AI-user/robot communication
 * 🔹 Strong in compression, anonymization, intuitive UI
-
+   
+- 🔹 20〜70bitで顔＋感情状態をエンコード
+- 🔹 modifier構文で印象／視線／肌質などを追加記述
+- 🔹 AI・ユーザー・ロボット間での非言語通信に適応
+- 🔹 圧縮／匿名化／直感UIに強い、画像×構文の融合手段
 ---
 
 ## 🧩 What is YFC? / YFCとは？
