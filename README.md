@@ -88,13 +88,13 @@ YIT_Project/
 
 ### YIT Specification
 
-* [YIT\_specification\_v0.9](https://www.notion.so/docs/YIT_specification_v0.9.md)
-* [YIT\_specification\_v0.9\_JP](https://www.notion.so/docs/YIT_specification_v0.9_JP.md)
+* YIT\_specification\_v0.9
+* YIT\_specification\_v0.9\_JP
 
 ### YFC Specification
 
-* [YFC\_specification\_v1.3.5](https://www.notion.so/docs/YFC_specification_v1.3.5.md)
-* [YFC\_specification\_v1.3\_JP](https://www.notion.so/docs/YFC_specification_v1.3_JP.md)
+* YFC\_specification\_v1.3.5
+* YFC\_specification\_v1.3\_JP
 
 ---
 
