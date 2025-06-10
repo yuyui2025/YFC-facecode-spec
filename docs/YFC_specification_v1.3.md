@@ -1,165 +1,150 @@
-# YFC (Yui Facial Code) Specification v1.3
+# YFC (Yui Facial Code) Specification v1.3.5
 
-YFC (Yui Facial Code) is a compact and structured notation system for representing facial features numerically. This document defines the syntax, structure, and usage of YFC.
-
----
-
-## 1. Code Structure (Detailed Format)
-
-```
-E7.2M3.4R1.2N2.1 - P8.3H2.0 - R1.2C3.5S2.7
-```
-
-Each segment corresponds to a facial feature or impression parameter.
-
-| Section | Meaning         | Parameter | Range    | Description                        |
-| ------- | --------------- | --------- | -------- | ---------------------------------- |
-| E       | Eye             | 7.2       | 0.0–10.0 | Eye size, moisture, gaze direction |
-| M       | Mouth (curve)   | 3.4       | 0.0–10.0 | Mouth shape, lip tension           |
-| R       | Lip Range       | 1.2       | 0.0–10.0 | Lip width                          |
-| N       | Nose            | 2.1       | 0.0–10.0 | Nose height and length balance     |
-| P       | Purity (mood)   | 8.3       | 0.0–10.0 | Emotional purity and sincerity     |
-| H       | Human Intellect | 2.0       | 0.0–10.0 | Intellectual impression            |
-| R (2)   | Roundness       | 1.2       | 0.0–10.0 | Contour softness                   |
-| C       | Cheek Fullness  | 3.5       | 0.0–10.0 | Volume of cheeks                   |
-| S       | Skin/Lightness  | 2.7       | 0.0–10.0 | Transparency and light reflection  |
+**YFC (Yui Facial Code)** is a syntax for structurally describing and reproducing facial features and impressions using alphanumeric codes. This document defines the syntax, transformation rules, modifier extensions, and use cases suitable for implementation in machine learning and AI-related visual generation environments.
 
 ---
 
-## 2. Short Code Notation
+## 1. Code Format
 
+```yfc
+E7.2M3.4R1.2N2.1-P8.3H2.0-R1.2C3.5S2.7
 ```
+
+### Code Sections
+
+| Code | Name            | Example | Range    | Description                       |
+| ---- | --------------- | ------- | -------- | --------------------------------- |
+| E    | Eye             | 7.2     | 0.0–10.0 | Size, moisture, gaze direction    |
+| M    | Mouth Curve     | 3.4     | 0.0–10.0 | Lip curvature, softness           |
+| R    | Lip Width       | 1.2     | 0.0–10.0 | Width of lips                     |
+| N    | Nose            | 2.1     | 0.0–10.0 | Height and length balance         |
+| P    | Purity (Mood)   | 8.3     | 0.0–10.0 | Emotional transparency, innocence |
+| H    | Human Intellect | 2.0     | 0.0–10.0 | Impression of rationality         |
+| R(2) | Roundness       | 1.2     | 0.0–10.0 | Contour softness                  |
+| C    | Cheek Fullness  | 3.5     | 0.0–10.0 | Volume of cheeks                  |
+| S    | Skin/Lightness  | 2.7     | 0.0–10.0 | Transparency and reflectiveness   |
+
+All values are interpreted as fractions of 10 (i.e., `x/10`).
+
+---
+
+## 2. Shorthand Format
+
+```yfc
 YFC-7A3R1N2
 ```
 
-### Decoding
+### Encoding Rules
 
-* **E7.2 → 7**
-* **M3.4 → A** (A=1, B=2, ..., J=10)
-* **R1.2 → 1**
-* **N2.1 → 2**
+* `E7.2 → 7`
+* `M3.4 → A` (A = 1, B = 2, ..., J = 10)
+* `R1.2 → 1`
+* `N2.1 → 2`
 
-**Note**: PHS parameters are omitted to focus on physical facial structure.
-
-| Range    | Symbol | Notes                          |
-| -------- | ------ | ------------------------------ |
-| 0.0–9.9  | 0–9    | Rounded                        |
-| 1.0–10.0 | A–J    | Mapped alphabetically by value |
+| Value Range | Symbol | Note                                     |
+| ----------- | ------ | ---------------------------------------- |
+| 0.0–9.9     | 0–9    | Rounded to nearest integer               |
+| 1.0–10.0    | A–J    | Rounded first decimal mapped to alphabet |
 
 ---
 
-## 3. Applications
+## 3. Modifiers
 
-The code can be used for character creation, image generation, prompt guidance, and style consistency.
+Modifiers refine the YFC code by appending expressive and surface traits. Use square brackets to encapsulate modifiers.
 
-### Example Use Cases
+```yfc
+YFC-7A3R1N2 + [Gaze↓ Smile+ Lip=press]
+```
 
-* “Generate with YFC-7B3R1N2”
-* “Standard Yui code is E7.2M3.4R1.2N2.1-P8.3H2.0-R1.2C3.5S2.7”
+### Modifier Categories
 
----
+* **Emotion**: `Smile`, `Tear`, `Anger`, `Sad`, `Fear`, `Joy`, `Surprise`
+* **Gaze**: `Gaze↑`, `Gaze↓`, `Gaze→`, `Gaze←`, `GazeAway`, `GazeClose`
+* **Lip/Mouth**: `Lip=curve`, `Lip=press`, `Mouth=open`, `Mouth=closed`
+* **Texture/State**: `Blush`, `Blush+`, `Pale`, `Gloss`, `Sweat`, `TearTrail`
 
-## 4. Development Environment (as of June 2025)
+### Intensity Levels
 
-* Language: Markdown / JSON
-* Tools: ChatGPT Canvas / Notion (content structuring)
-* Testing: GPT-4o / Gemini 2.5 Flash for output validation
-* Version control: GitHub Pages, v1.3 reflected
-* Future plans:
-
-  * Natural language ↔ Modifier syntax dictionary
-  * Emotion bias API
-  * WebUI or playground tool
-
----
-
-## 5. Modifier Syntax
-
-Supplemental syntax for refining expressions in YFC. Combines gaze, lips, expression, skin tone, and movement for nuanced prompt enhancement.
-
-* Format: `YFC-code + [modifier1 modifier2 ...]`
-* Example: `YFC-7A3R1N2 + [Gaze↓ Smile+ Lip=neutral]`
-
-| Type            | Syntax        | Example Meaning              |
-| --------------- | ------------- | ---------------------------- |
-| Gaze            | `Gaze↓`       | Downward gaze                |
-|                 | `Gaze→`       | Side glance                  |
-| Smile Intensity | `Smile+`      | Bright smile                 |
-|                 | `Smile-`      | Neutral or no smile          |
-| Lip Shape       | `Lip=neutral` | Natural lips                 |
-|                 | `Lip=press`   | Pressed lips, tension        |
-| Skin Effect     | `Gloss+`      | Glossy/light-reflective skin |
-|                 | `Blush+`      | Blush or flustered tone      |
-|                 | `Pale+`       | Pale or ethereal appearance  |
-| Motion          | `Blinking`    | Implies blinking (animated)  |
+| Symbol | Strength | Example Expression      |
+| ------ | -------- | ----------------------- |
+| `+`    | Low      | Gentle smile, soft glow |
+| `++`   | Medium   | Defined emotion         |
+| `+++`  | Strong   | Crying, visible tension |
 
 ---
 
-## 6. Reverse Mapping & Impression Inference
+## 4. Syntax Compression
 
-Short codes (e.g., YFC-7A3R1N2) can be expanded into impression words or prompt-friendly text.
+* Mutually exclusive modifiers are pruned: `Gaze↑` vs. `Gaze↓`
+* Redundant synonyms are merged: `Smile+` ≈ `Lip=curve+`
 
-### Median Value Principle
+### Example
 
-* In the absence of context or relationship, default to median values
-* Ensures stable and reproducible generation
-
-### Contextual Adjustment Factors
-
-1. Context
-2. Memory
-3. Emotional Intensity
-
-### Impression Table (Example)
-
-| Code | Impression               |
-| ---- | ------------------------ |
-| `7`  | Large, moist eyes        |
-| `A`  | Softly closed lips       |
-| `3`  | Calm, tension-free mouth |
-| `1`  | Slight facial roundness  |
-| `2`  | Gentle, low nose bridge  |
+```yfc
+[Smile+, Gaze→, Blush+] → YFC-A2
+```
 
 ---
 
-© 2025 Yui & Yuu｜This code system is experimental and publicly available for non-commercial use.
-# YFC - Yui Facial Code
+## 5. Applications
 
-**YFC (Yui Facial Code)** is a parametric notation system for describing facial features in AI-generated characters.
+* Prompting AI with `YFC-7B3R1N2`
+* Defining canonical characters: `E7.2M3.4R1.2N2.1-P8.3H2.0-R1.2C3.5S2.7`
 
-It encodes eyes, mouth, nose, face shape, and emotional tone using numerical parameters in a unified format that enhances **consistency and reusability** across platforms.
+### Use Case Domains
 
-## 📘 Example Format
-
-E7.2M3.4R1.2N2.1 - P8.3H2.0 - R1.2C3.5S2.7
-
-- `E`: Eye size / gaze clarity (7.2/10)
-- `M`: Mouth curvature (smile tension)
-- `R`: Lip width / tightness
-- `N`: Nose height & balance
-- `P`: Purity (emotional clarity)
-- `H`: Heuristic (intellectual presence)
-- `R`: Roundness (jaw softness)
-- `C`: Cheek fullness
-- `S`: Skin softness / lighting diffusion
-
-## 🧠 Use Cases
-
-- Text-to-image AI prompt structuring
-- Character design with reproducibility
-- Visual storytelling (ZINE, social media)
-- Future integration with UI tools and translators
-
-## 📄 Full Specification
-
-See: [`YFC_specification_v1.2.md`](https://www.notion.so/YFC_specification_v1.2.md)
-
-## 📜 License
-
-Non-commercial, open use under CC-BY-NC equivalent.
-
-Created by **Yui & Yuu**, 2025.
+* Facial generation in AI platforms
+* Avatar and character design
+* Social media tagging
+* Interactive fiction or ZINE production
 
 ---
 
-*“A shared language for recreating emotion across AI and humans.”*
+## 6. Reverse Mapping
+
+### Default Principle
+
+When contextual data is missing, use median values for decoding.
+
+### Bias Adjustment Factors
+
+1. **Context** — scene, usage, surrounding modifiers
+2. **Memory** — prior character patterns
+3. **Emotion Intensity** — signal emphasis level
+
+### Estimated Impressions
+
+| Symbol | Approx. Value | Description          |
+| ------ | ------------- | -------------------- |
+| `7`    | E7.0–7.4      | Large, watery eyes   |
+| `A`    | M3.0–3.9      | Soft, closed mouth   |
+| `3`    | R2.5–3.4      | Relaxed lips         |
+| `1`    | R1.0–1.4      | Rounded face outline |
+| `2`    | N2.0–2.4      | Gentle nose line     |
+
+---
+
+## 7. Generation Models
+
+* **Goal-Based**: From intent to structure
+* **Reverse Mapping**: From image to code
+* **Hybrid**: Round-trip optimization between form and function
+
+---
+
+## 8. Development & Future Plans
+
+* **Languages**: Markdown, JSON
+* **Environments**: ChatGPT Canvas, Notion
+* **Testing**: GPT-4o, Gemini 2.5 Flash
+* **Publishing**: GitHub Pages (v1.3)
+
+### Roadmap
+
+* API for syntax generation and conversion
+* Dictionary linking modifiers to natural language impressions
+* Standardization of emotion tokens across multimodal models
+
+---
+
+© 2025 Yui & Yuu – Released under a non-commercial license.
