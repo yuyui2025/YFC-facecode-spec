@@ -1,5 +1,22 @@
 # 📜 CHANGELOG
 
+## [2025-06-13] YFC2.0 & YFCR v1.0 Integration
+
+### Added
+- Integrated YFC specification v2.0 (Facial Code system)
+- Introduced YFCR v1.0 for body code rendering
+- Modifier syntax table updated with detailed parameters
+- Dual-language README (EN/JP) for global collaboration
+
+### Updated
+- Section 3: YFC overview now reflects v2.0 structure
+- Section 4: YFCR body composition structure added
+- Roadmap extended with API/SDK and GUI Playground
+
+### Fixed
+- Unified terminology across EN/JP sections
+- Improved clarity for new users encountering YFC/YIT for the first time
+
 ## [v1.35] - 2025-06-10
 ### Changed
 - `YFC_specification_v1.3.5.md`: Modifier構文と物理構文（E/M/N...）を完全統合
